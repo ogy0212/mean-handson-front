@@ -1,10 +1,17 @@
 <hr/>
-<h1>new name is {{ newname }}</h1>
+<span>new name is {{ newname }}</span>
 {{ name }}
 <input type="text" [(ngModel)]="name">
 <button (click)="changeName()">change name</button>
-<ul>
-    <li *ngFor="let day of days">
-        {{ day }}
-    </li>
-</ul>
+
+
+<form #myForm="ngForm" (submit)="submitForm()">
+    First name:<br>
+    <input type="text" ngModel name="firstname" required #firstname="ngModel">
+    <br>
+    <p *ngIf="!firstname.pristine && !firstname.valid">This field is required</p>
+    Last name:<br>
+    <input type="text" ngModel name="lastname" required #lastname="ngModel">
+    <br><br>
+    <button type="submit" [disabled]="!myForm.valid">Submit</button>
+</form>

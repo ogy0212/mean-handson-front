@@ -28,4 +28,8 @@ export class MyBindingsComponent implements OnInit {
     this.clicked.emit(greeting);
   }
 
+  submitForm() {
+    alert("submitted");
+  }
+
 }
