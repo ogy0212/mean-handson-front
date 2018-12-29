@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MydaysService } from './mydays.service';
+
 @Component({
   selector: 'app-mycomp',
   templateUrl: './mycomp.component.html',
@@ -8,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class MycompComponent implements OnInit {
 
   private name: string = 'OGY';
-  private days: string[] = ['sunday', 'monday', 'tuesday', 'wednesday'];
+  private days: string[] = this.mydaysService.getDays();
 
-  constructor() {}
+  constructor(public mydaysService: MydaysService) {}
 
   ngOnInit() {
   }

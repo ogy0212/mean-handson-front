@@ -3,3 +3,8 @@
 {{ name }}
 <input type="text" [(ngModel)]="name">
 <button (click)="changeName()">change name</button>
+<ul>
+    <li *ngFor="let day of days">
+        {{ day }}
+    </li>
+</ul>
