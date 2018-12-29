@@ -1,0 +1,12 @@
+<p>
+  mycomp works!
+</p>
+<h2>Hi from mycomp component</h2>
+<p>my name is {{name}}</p>
+<p>below is days</p>
+<ul>
+  <li *ngFor="let day of days">
+    {{ day }}
+    <span *ngIf="isWeekend(day)"> sorry, we are closed.</span>
+  </li>
+</ul>
